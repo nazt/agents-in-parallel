@@ -1,0 +1,9 @@
+[book]
+title = "Agents in Parallel"
+description = "Patterns and proof for orchestrating many AI agents"
+language = "en"
+src = "src"
+
+[output.html]
+default-theme = "navy"
+preferred-dark-theme = "navy"
