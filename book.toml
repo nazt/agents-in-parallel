@@ -7,3 +7,6 @@ src = "src"
 [output.html]
 default-theme = "navy"
 preferred-dark-theme = "navy"
+additional-css = ["theme/custom.css"]
+no-section-label = false
+git-repository-url = "https://github.com/nazt/agents-in-parallel"

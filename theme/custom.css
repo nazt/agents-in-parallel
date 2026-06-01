@@ -1,0 +1,165 @@
+/* =====================================================================
+   Agents in Parallel — custom theme
+   Swiss-editorial · warm dark · amber accent · serif body / sans headings
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --aip-amber: #E0922E;
+  --aip-amber-dim: #C77F2A;
+  --aip-ink: #15120D;
+  --aip-ink-2: #100E0A;
+  --aip-line: #2A2419;
+  --aip-line-2: #211C14;
+  --aip-paper: #E9E3D6;
+  --aip-paper-dim: #B8AF9E;
+}
+
+/* ---------- palette (applied to the navy theme) ---------- */
+.navy {
+  --bg: var(--aip-ink);
+  --fg: var(--aip-paper);
+
+  --sidebar-bg: var(--aip-ink-2);
+  --sidebar-fg: var(--aip-paper-dim);
+  --sidebar-non-existant: #5c554a;
+  --sidebar-active: var(--aip-amber);
+  --sidebar-spacer: var(--aip-line);
+
+  --scrollbar: #3a3326;
+
+  --icons: #8a8170;
+  --icons-hover: var(--aip-amber);
+
+  --links: var(--aip-amber);
+
+  --inline-code-color: #E6BE84;
+
+  --theme-popup-bg: var(--aip-ink-2);
+  --theme-popup-border: var(--aip-line);
+  --theme-hover: #211c14;
+
+  --quote-bg: #1b1710;
+  --quote-border: var(--aip-amber);
+
+  --table-border-color: var(--aip-line);
+  --table-header-bg: var(--aip-line-2);
+  --table-alternate-bg: #19150f;
+
+  --searchbar-border-color: var(--aip-line);
+  --searchbar-bg: var(--aip-ink-2);
+  --searchbar-fg: var(--aip-paper);
+  --searchbar-shadow-color: #000000;
+  --searchresults-header-fg: #8a8170;
+  --searchresults-border-color: var(--aip-line);
+  --searchresults-li-bg: #1b1710;
+  --search-mark-bg: var(--aip-amber-dim);
+}
+
+/* ---------- typography ---------- */
+html { font-size: 17px; }
+
+.content {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+}
+.content main {
+  max-width: 43rem;
+  margin-inline: auto;
+  padding-bottom: 6rem;
+}
+.content p,
+.content li {
+  line-height: 1.72;
+  letter-spacing: 0.1px;
+}
+.content p { margin: 0 0 1.05rem; }
+
+/* headings: Inter, tight, with an editorial top-rule on H2 */
+.content h1, .content h2, .content h3,
+.content h4, .content h5, .content h6,
+.menu-title, .sidebar, .chapter, .nav-chapters {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+.content h1 {
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  font-size: 2.2rem;
+  line-height: 1.12;
+  margin: 0 0 0.6rem;
+}
+.content h2 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  font-size: 1.5rem;
+  margin-top: 2.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--aip-line-2);
+}
+.content h3 {
+  font-weight: 600;
+  letter-spacing: -0.008em;
+  font-size: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+/* the italic "dek" line right under a chapter title */
+.content h1 + p {
+  font-style: italic;
+  font-size: 1.16rem;
+  line-height: 1.5;
+  color: var(--aip-paper-dim);
+  margin-bottom: 1.6rem;
+}
+
+/* ---------- links ---------- */
+.content a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(224, 146, 46, 0.35);
+  transition: border-color .15s ease, color .15s ease;
+}
+.content a:hover { border-bottom-color: var(--aip-amber); }
+
+/* ---------- blockquote / the "The rule:" takeaways ---------- */
+.content blockquote {
+  border-left: 3px solid var(--aip-amber);
+  background: var(--quote-bg);
+  border-radius: 0 6px 6px 0;
+  padding: 0.8rem 1.2rem;
+  font-style: normal;
+}
+
+/* ---------- code ---------- */
+.content code { font-family: "JetBrains Mono", ui-monospace, monospace; }
+.content :not(pre) > code {
+  background: var(--aip-line-2);
+  border: 1px solid var(--aip-line);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.84em;
+}
+.content pre {
+  border: 1px solid #241f17;
+  border-radius: 10px;
+  background: var(--aip-ink-2) !important;
+  padding: 1rem 1.1rem;
+}
+.content pre > code { background: transparent !important; font-size: 0.86rem; line-height: 1.6; }
+
+/* ---------- tables ---------- */
+.content table { border-collapse: collapse; font-size: 0.95rem; }
+.content table thead th { font-family: "Inter", sans-serif; font-weight: 600; letter-spacing: -0.005em; }
+.content td, .content th { border: 1px solid var(--aip-line); padding: 0.5rem 0.75rem; }
+
+/* ---------- sidebar ---------- */
+.sidebar { font-size: 0.84rem; }
+.sidebar .sidebar-scrollbox { padding: 1rem 1.2rem; }
+.chapter li.chapter-item { line-height: 1.45; margin: 0.32em 0; }
+.chapter li a { letter-spacing: -0.004em; }
+.chapter li a.active { color: var(--aip-amber); font-weight: 600; }
+
+/* ---------- menu / top bar ---------- */
+.menu-title { font-weight: 600; letter-spacing: 0.01em; }
+
+/* subtle: thinner horizontal rules */
+.content hr { border: none; border-top: 1px solid var(--aip-line-2); margin: 2.2rem 0; }
